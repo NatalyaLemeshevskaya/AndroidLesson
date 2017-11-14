@@ -39,7 +39,8 @@ public class Lesson1 {
         }
 
         //4 задание
-        int summa = 23;
+        int summa = 11;
+        if (summa>19 || summa<11){
 
             switch (summa % 10) {
                 case 0:
@@ -63,6 +64,10 @@ public class Lesson1 {
 
 
             }
+        } else {
+            System.out.println(summa +" рублей");
+        }
+
 
 
          // 5 задание
