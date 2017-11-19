@@ -83,28 +83,21 @@ public class Lesson2 {
         System.out.println(Arrays.toString(array3));
 
         // 4 задание
-        //Random random= new Random();
-        //int number= random.nextInt(1000);
-        //Integer number=1258;
-        //String c= number.toString();
-//        int num = 1234; //Данное число
-//        String number = String.valueOf(num);
-//        int result[] = new int[number.length()]; //Требуемый массив
-//        for (int i=0; i<number.length(); i++)
-//        {
-//            result[i]=Integer.valueOf(number.charAt(i)).intValue();//получаем символ из строки по его номеру
-//            //и записываем его как элемент массива
-//          number+=Integer.toString(result[i]);//записываем полученные символы в другую строку
-//            System.out.println(result);
-//    }
 
-
-
-       // for (int i = 0; i < number.length(); i++) {
-         //   result[i] = number.charAt(i);
-        //}
-
-          //  System.out.println("массивчик "+Arrays.toString(result));
+        int num = 12325; //Данное число
+        String number = String.valueOf(num);
+        char[] ch= number.toCharArray();
+        int m=1;
+        for(int i = 0, j = 1; i<ch.length-1; i++,j++  ){
+            if(ch[i]<ch[j]){
+                m++;
+            }
+        }
+        if(m==ch.length){
+            System.out.println("Это число -  возрастающая последовательность");
+        }else{
+            System.out.println("Это число - не  возрастающая последовательность");
+        }
 
 
         //5 задание
