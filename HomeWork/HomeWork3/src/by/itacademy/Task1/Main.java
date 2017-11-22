@@ -27,11 +27,13 @@ public class Main {
 
         Vivod(Ar);
 
+
      }
 
    public static void Vivod (int[]Arra ) {
-       System.out.println(Arrays.toString(Arra));
 
+       String rezult = Arrays.toString(Arra).replaceAll(",", ",|");
+       System.out.println(rezult);
    }
 
    public static void Sorted(int[] Ar,int[] Ar2,int[]Ar3){
@@ -81,10 +83,17 @@ public class Main {
    public static void evenNumbers(int[]Arr){
        for(int i=0;i< Arr.length;i++){
            if( Arr[i]%2==0 && Arr[i]!=0){
-                System.out.print(Arr[i]+"|");
+
+               System.out.print(Arr[i]);
+
+               if(Arr[i]+1!=Arr.length){
+                   System.out.print(",|" );
+               }
+
            }
 
        }
+
 
    }
 
