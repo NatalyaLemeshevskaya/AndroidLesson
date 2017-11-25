@@ -16,49 +16,52 @@ public class Lesson2 {
         int Indmax=array[0];
         System.out.println("Наш массив - "+ Arrays.toString(array));
 
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (min > array[i]){
                 min = array[i];
                 Indmin=i;
+
             }
                 if (max < array[i]){
                     max = array[i];
                     Indmax=i;
             }
+
         }
+        array[Indmin]=0;
+        array[Indmax]=99;
+
         System.out.println("min value = " + min);
         System.out.println("max value = " + max);
-
-       for (int i = 1; i < array.length; i++) {
-            array[Indmin]=0;
-            array[Indmax]=99;
-        }
-            System.out.println("Измененный массив - "+Arrays.toString(array));
+        System.out.println("Измененный массив - "+Arrays.toString(array));
 
 
 
       //2 задание
-        float[] array2={6.2f,5.3f,4.2f,8f,8f,4.2f,4.2f,9f,9f,6.2f};
+        float[] array2={6.2f,5.3f,4.2f,8f,8f,4.2f,4.2f,9f,6.2f,6.2f};
         int kol_povt=0;
         float znach=0;
 
               System.out.println("Наш массив - "+Arrays.toString(array2));
-        for(int i=0;i<array2.length;i++){
-            kol_povt=1;
+        for(int i=0;i<array2.length;i++) {
+            kol_povt = 1;
 
-            for(int j=i+1;j<array2.length;j++){
+            if (array2[i]== znach)
+                break;
 
-                    if(array2[i]==array2[j] &&(i!=j)) {
-                        znach=array2[i];
+            for (int j = i + 1; j < array2.length; j++) {
+
+                if (array2[i] == array2[j] && (i != j)) {
+                    znach = array2[i];
                     kol_povt++;
+                }
+
             }
 
-       }
-            if(kol_povt!=1 ){
-                System.out.println("["+znach+"] - повторений "+kol_povt);
+            if (kol_povt != 1) {
+                System.out.println("[" + znach + "] - повторений " + kol_povt);
             }
-            kol_povt=0;
-            //break;
+            kol_povt = 0;
 
         }
 
@@ -122,4 +125,6 @@ public class Lesson2 {
         System.out.println(Arrays.toString(array4));
 
     }
+
+
 }
