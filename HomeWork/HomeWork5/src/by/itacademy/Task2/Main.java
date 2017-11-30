@@ -5,33 +5,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int sot;
-        int pt;
-        int dv;
         Manager manager = new Manager();
         int money = 470;
         System.out.println("Количество денег в банкомате: "+ money);
         manager.kolMoney(money);
-        sot = manager.a;
-        pt = manager.b;
-        dv = manager.c;
+        manager.sot = manager.a;
+        manager.pt = manager.b;
+        manager.dv= manager.c;
 
-        int money2 = manager.vvod() + money;
+        int money2 = manager.dobavl() + money;
         System.out.println("Количество денег в банкомате: "+ money2);
-        sot = sot +manager.a;
-        pt = pt + manager.b;
-        dv = dv +manager.c;
-        System.out.println(sot+"-сотки"+pt+"-пятидесятки"+dv+"двадцатки ");
 
-        int money3 = money2 - manager.vvod();
+
+        int money3 = money2 - manager.snyat();
         System.out.println("Количество денег в банкомате: "+ money3);
-        sot = sot - manager.a;
-        pt = pt - manager.b;
-        dv = dv - manager.c;
-        System.out.println(sot+"-сотки"+pt+"-пятидесятки"+dv+"двадцатки ");
-
-
-
 
     }
 
