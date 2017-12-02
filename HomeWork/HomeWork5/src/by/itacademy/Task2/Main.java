@@ -1,23 +1,20 @@
 package by.itacademy.Task2;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
-        Manager manager = new Manager();
+        ATM atm = new ATM();
         int money = 470;
         System.out.println("Количество денег в банкомате: "+ money);
-        manager.kolMoney(money);
-        manager.sot = manager.a;
-        manager.pt = manager.b;
-        manager.dv= manager.c;
+        atm.kolMoney(money);
+        atm.fifties = atm.fifties1;
+        atm.twenty= atm.twenty1;
 
-        int money2 = manager.dobavl() + money;
+        int money2 = atm.dobavl() + money;
         System.out.println("Количество денег в банкомате: "+ money2);
 
 
-        int money3 = money2 - manager.snyat();
+        int money3 = money2 - atm.snyat();
         System.out.println("Количество денег в банкомате: "+ money3);
 
     }
