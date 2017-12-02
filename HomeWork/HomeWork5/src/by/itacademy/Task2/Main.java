@@ -7,6 +7,7 @@ public class Main {
         int money = 470;
         System.out.println("Количество денег в банкомате: "+ money);
         atm.kolMoney(money);
+        atm.hundred = atm.hundred1;
         atm.fifties = atm.fifties1;
         atm.twenty= atm.twenty1;
 

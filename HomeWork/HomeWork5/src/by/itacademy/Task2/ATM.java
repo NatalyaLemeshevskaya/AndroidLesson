@@ -19,8 +19,8 @@ public static Scanner in = new Scanner(System.in);
         kolMoney(mon);
         hundred = hundred + hundred1;
         fifties = fifties + fifties1;
-        twenty = twenty + twenty;
-        System.out.println(hundred+"-сотки"+fifties1+"-пятидесятки"+twenty+"двадцатки ");
+        twenty = twenty + twenty1;
+        System.out.println(hundred+"-сотки"+fifties+"-пятидесятки"+twenty+"двадцатки ");
         return mon;
     }
 
