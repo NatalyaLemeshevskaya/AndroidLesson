@@ -27,7 +27,7 @@ public class Main {
             try {
                 pacient[i].setDateOfBirsday(simpleDateFormat.parse(in.next()));
             } catch (Exception e) {
-                System.out.println("Ошибка");
+                System.out.println("Неверный ввод данных");
             }
 
 
