@@ -1,4 +1,4 @@
-package by.itacademy.Task1;
+package by.itacademy.Task2;
 
 import java.util.Scanner;
 
@@ -19,7 +19,10 @@ public class Calculator {
 
     }
 
-    public  void multiplication(int number1,int number2){
+    public  void multiplication(int number1,int number2)throws TwoException{
+        if (number1==2 || number2 ==2){
+            throw new TwoException("Наш калькулятор запрещает умножать на 2");
+        }
 
         System.out.println("Произведение введенных чисел = "+(number1*number2));
 
@@ -49,6 +52,15 @@ public class Calculator {
             System.out.println("Вы ввели не целое число");
         }
         return number2;
+    }
+
+    public char operator() throws OperatorException{
+        System.out.println("Введите оператор: ");
+        char operator = in.next().charAt(0);
+        if (operator!= '+' || operator!='-'||operator!= '*' ||operator!= '/' ){
+            throw new OperatorException("Возможно вы ввели оператор, с которым не работает наш калькулятор");
+        }
+        return operator;
     }
 
 
