@@ -12,17 +12,20 @@ public class Main {
             while((c=reader.read())!=-1){
 
                 System.out.print((char)c);
+                return;
+
             }
         }
         catch (IOException e){
             System.out.println("Ошибка");
         }
+
          //запись в файл
         try(FileWriter writer = new FileWriter("C:\\Users\\Nataly\\Documents\\Text.txt",true)){
             String text = " ,World";
             writer.write(text);
             writer.append('\n');
-            
+
             writer.flush();
 
 
