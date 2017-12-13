@@ -1,77 +1,81 @@
 package by.itacademy.Task4;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[]arg){
+    public static void main(String[]arg) throws Exception{
 
         Pacient[] pacient = new Pacient[2];
-
-        for(int i=0;i<pacient.length;i++) {
-            pacient[i] = new Pacient();
-
-
-            Scanner in = new Scanner(System.in);
-            System.out.println("Введите имя пациента № "+(i+1)+":");
-            pacient[i].setName(in.next());
-            System.out.println("Введите диагноз пациента № "+(i+1)+":");
-            pacient[i].setDisease(in.next());
-            System.out.println("Введите возраст пациента № "+(i+1)+":");
-            pacient[i].setAge(in.nextInt());
-
-
-        }
-        for( Pacient i: pacient){
-            printPeople(i);
-        }
-
-//     String pathToFile = "C://MyFile.txt//MyFile";
-//     File file = new File(pathToFile);
 
         String path = new File("").getAbsolutePath();
         File newFile = new File(path + "file1.txt");
 
-        try
-        {
-            boolean created = newFile.createNewFile();
-            if(created)
-                System.out.println("Файл создан");
-        }
-        catch(IOException ex){
+//проверяем существует ли файл
 
-            System.out.println(ex.getMessage());
-        }
+        if(!newFile.exists()) {
+            try
+            {
+                //создаем файл
 
-        for( Pacient i: pacient) {
-            String text = printPeople(i);
-
-
-            try (FileOutputStream fos = new FileOutputStream(newFile)) {
-                // перевод строки в байты
-                byte[] buffer = text.getBytes();
-
-                fos.write(buffer, 0, buffer.length);
-            } catch (IOException ex) {
+                boolean created = newFile.createNewFile();
+                if(created)
+                    System.out.println("Файл создан");
+            }
+            catch(IOException ex){
 
                 System.out.println(ex.getMessage());
             }
+//заполняем созданный файл
+
+            for(int i=0;i<pacient.length;i++) {
+                pacient[i] = new Pacient();
+
+                Scanner in = new Scanner(System.in);
+                System.out.println("Введите имя пациента № "+(i+1)+":");
+                pacient[i].setName(in.next());
+                System.out.println("Введите диагноз пациента № "+(i+1)+":");
+                pacient[i].setDisease(in.next());
+                System.out.println("Введите возраст пациента № "+(i+1)+":");
+                pacient[i].setAge(in.nextInt());
+
+
+            }
+            for( Pacient i: pacient){
+                printPeople(i);
+            }
+
+            try (PrintWriter printWriter = new PrintWriter(newFile,"UTF-8")) {
+                for (int i = 0; i < pacient.length; i++) {
+                    printWriter.println(pacient[i].getName()+" "+pacient[i].getDisease()+" "+pacient[i].getAge());
+
+                }
+                printWriter.close();
+            } catch (FileNotFoundException ex) {
+                System.out.println("Ошибка ");
+            }
+
+        } else {
+
+//Считываем с файла и заполняем массив
+
+            Scanner scanner = new Scanner(newFile);
+            for (int i = 0; i < pacient.length; i++) {
+
+                pacient[i] = new Pacient();
+                pacient[i].setName(scanner.next());
+                pacient[i].setDisease(scanner.next());
+                pacient[i].setAge(scanner.nextInt());
+
+            }
+
+            for (Pacient i : pacient) {
+                printPeople(i);
+            }
 
         }
-
-
-//        try
-//     {
-//         FileWriter fr =  new FileWriter(newFile);
-//         for( int i = 0;i<pacient.length;i++){
-//             fr.write(i);
-//         }
-//         fr.close();
-//
-//         }catch (IOException e){
-//         System.out.println(e.getMessage());
-//     }
 
 
     }
