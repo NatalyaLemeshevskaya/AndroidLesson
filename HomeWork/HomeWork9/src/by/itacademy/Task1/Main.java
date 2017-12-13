@@ -1,13 +1,13 @@
 package by.itacademy.Task1;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<String> student = new LinkedList<>();
+        List<String> student = new ArrayList<>();
         Scanner in = new Scanner(System.in);
 
         String str = "end";

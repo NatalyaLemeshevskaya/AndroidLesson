@@ -5,15 +5,41 @@ import java.util.List;
 
 public class Room {
 
-    private static final int maxPercent = 70;
-    //пл комнаты
+    private String nameOfRoom;
+       //пл комнаты
     private double sq;
-    //площадь оставшегося места
-    private double freeSq;
+    //площадь занятого места
+    private double unfreeSq;
     private int numberOfWindows;
+
     private List<Lamp> lampList = new ArrayList<>();
     private List<Furniture> furnitureList = new ArrayList<>();
 
+
+
+    public double getUnfreeSq() {
+        return unfreeSq;
+    }
+
+    public void setUnfreeSq(double unfreeSq) {
+        this.unfreeSq = unfreeSq;
+    }
+
+    public Room(String nameOfRoom, double sq, int numberOfWindows) {
+        this.nameOfRoom = nameOfRoom;
+        this.sq = sq;
+        this.numberOfWindows = numberOfWindows;
+        this.lampList = lampList;
+        this.furnitureList = furnitureList;
+    }
+
+    public String getNameOfRoom() {
+        return nameOfRoom;
+    }
+
+    public void setNameOfRoom(String nameOfRoom) {
+        this.nameOfRoom = nameOfRoom;
+    }
 
     public double getSq() {
         return sq;
@@ -24,11 +50,11 @@ public class Room {
     }
 
     public double getFreeSq() {
-        return freeSq;
+        return unfreeSq;
     }
 
     public void setFreeSq(double freeSq) {
-        this.freeSq = freeSq;
+        this.unfreeSq = freeSq;
     }
 
 
@@ -57,17 +83,19 @@ public class Room {
     }
 
 
-
-    private void addLamp(Lamp lamp){
+    public void addLamp(Lamp lamp) throws IlluminanceTooMuchException {
         //здесь так же проверяем
+        if(lamp.getLight()+(numberOfWindows*700) >= 4000){
+            throw new IlluminanceTooMuchException("Превышена освещенность помещения");
+        }
         lampList.add(lamp);
 
     }
-    private void addFurniture(Furniture furniture)throws Exception{
+    public void addFurniture(Furniture furniture)throws SpaceUsageTooMuchException{
         //здесь проверяем влазит ли мебель, через исключение
 
-        if(){
-            throw  new Exception();
+        if(unfreeSq > sq*0.7 ){
+            throw  new SpaceUsageTooMuchException("Мебель должна занимать не более 70% помещения!!!");
         }
         furnitureList.add(furniture);
 
