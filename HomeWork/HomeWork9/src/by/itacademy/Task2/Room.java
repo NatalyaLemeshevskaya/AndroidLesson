@@ -11,11 +11,21 @@ public class Room {
     //площадь занятого места
     private double unfreeSq;
     private int numberOfWindows;
+    private int numberOfLamp;
+
+
 
     private List<Lamp> lampList = new ArrayList<>();
     private List<Furniture> furnitureList = new ArrayList<>();
 
 
+    public int getNumberOfLamp() {
+        return numberOfLamp;
+    }
+
+    public void setNumberOfLamp(int numberOfLamp) {
+        this.numberOfLamp = numberOfLamp;
+    }
 
     public double getUnfreeSq() {
         return unfreeSq;
@@ -25,12 +35,14 @@ public class Room {
         this.unfreeSq = unfreeSq;
     }
 
-    public Room(String nameOfRoom, double sq, int numberOfWindows) {
+    public Room(String nameOfRoom, double sq, int numberOfWindows,int numberOfLamp) {
         this.nameOfRoom = nameOfRoom;
         this.sq = sq;
         this.numberOfWindows = numberOfWindows;
+        this.numberOfLamp = numberOfLamp;
         this.lampList = lampList;
         this.furnitureList = furnitureList;
+
     }
 
     public String getNameOfRoom() {
@@ -84,19 +96,24 @@ public class Room {
 
 
     public void addLamp(Lamp lamp) throws IlluminanceTooMuchException {
-        //здесь так же проверяем
-        if(lamp.getLight()+(numberOfWindows*700) >= 4000){
+       for (Lamp lamp1:lampList){
+           double light =+ lamp1.getLight();
+        if(light+(numberOfWindows*700) >= 4000){
             throw new IlluminanceTooMuchException("Превышена освещенность помещения");
+        }
         }
         lampList.add(lamp);
 
     }
     public void addFurniture(Furniture furniture)throws SpaceUsageTooMuchException{
         //здесь проверяем влазит ли мебель, через исключение
-
-        if(unfreeSq > sq*0.7 ){
+for(Furniture furniture1: furnitureList){
+    unfreeSq =+ furniture1.getSq();
+        if(unfreeSq >= sq*0.7 ){
             throw  new SpaceUsageTooMuchException("Мебель должна занимать не более 70% помещения!!!");
         }
+   // unfreeSq =furniture1.getSq();
+    }
         furnitureList.add(furniture);
 
     }
