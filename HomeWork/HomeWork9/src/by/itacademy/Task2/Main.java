@@ -55,7 +55,12 @@ public class Main {
 System.out.println(build.getNameOfBuilt()+"\n "+room1.getNameOfRoom()+"\n "+
         "Площадь комнаты: "+room1.getSq()+" м^2 "+ "Занято "+room1.getUnfreeSq()+" м^2 "+"\n " +
         "Освещенность: Окон - "+room1.getNumberOfWindows()+" по 700 лк. Лампочек - " +
-        room1.getLampList().size()+"\n  Мебель: "+room1.getFurnitureList().size() );
+        room1.getLampList().size());
+                for(Lamp lamp: room1.getLampList()){
+            int linght = lamp.getLight();
+            System.out.println("Освещенностью "+linght+ " Лк" );
+        }
+System.out.println("  Мебель: "+room1.getFurnitureList().size() );
     for (Furniture furniture: room1.getFurnitureList()){
         String  nameOfTable = furniture.getName();
         System.out.print(nameOfTable);
@@ -65,9 +70,15 @@ System.out.println(build.getNameOfBuilt()+"\n "+room1.getNameOfRoom()+"\n "+
 
 
  System.out.println(room2.getNameOfRoom()+"\n "+
-                "Площадь комнаты: "+room2.getSq()+" м^2 "+ "Занято "+room2.getUnfreeSq()+" м^2 "+"\n " +
-                "Освещенность: Окон - "+room2.getNumberOfWindows()+" по 700 лк. Лампочек - " +
-                room2.getLampList().size()+"\n  Мебель: "+room2.getFurnitureList().size());
+         "Площадь комнаты: "+room2.getSq()+" м^2 "+ "Занято "+room2.getUnfreeSq()+" м^2 "+"\n " +
+         "Освещенность: Окон - "+room2.getNumberOfWindows()+" по 700 лк. Лампочек - " +
+         room2.getLampList().size());
+        for(Lamp lamp: room2.getLampList()){
+            int linght = lamp.getLight();
+            System.out.println("Освещенностью "+linght+ " Лк" );
+        }
+ System.out.println("  Мебель: "+room2.getFurnitureList().size() );
+
         for (Furniture furniture: room2.getFurnitureList()){
             String  nameOfTable = furniture.getName();
             System.out.print(nameOfTable);
