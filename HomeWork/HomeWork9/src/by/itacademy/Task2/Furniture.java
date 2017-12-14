@@ -3,9 +3,19 @@ package by.itacademy.Task2;
 public abstract class Furniture {
     //площадь
     private double sq;
+    private String name;
 
-    public Furniture(double sq) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Furniture(double sq, String name) {
         this.sq = sq;
+        this.name = name;
     }
 
     public double getSq() {

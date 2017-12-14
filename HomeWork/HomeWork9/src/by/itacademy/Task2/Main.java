@@ -3,6 +3,7 @@ package by.itacademy.Task2;
 public class Main {
     public static void main(String[] args) {
 
+
         Build build = new Build("Здание 1");
         Room room1 = new Room("Комната1",50.0,2,3);
         Room room2 = new Room("Комната2",14.0,1,2);
@@ -55,12 +56,24 @@ System.out.println(build.getNameOfBuilt()+"\n "+room1.getNameOfRoom()+"\n "+
         "Площадь комнаты: "+room1.getSq()+" м^2 "+ "Занято "+room1.getUnfreeSq()+" м^2 "+"\n " +
         "Освещенность: Окон - "+room1.getNumberOfWindows()+" по 700 лк. Лампочек - " +
         room1.getLampList().size()+"\n  Мебель: "+room1.getFurnitureList().size() );
+    for (Furniture furniture: room1.getFurnitureList()){
+        String  nameOfTable = furniture.getName();
+        System.out.print(nameOfTable);
+        double sq = furniture.getSq();
+        System.out.println(" площадью "+sq+" м^2");
+    }
 
 
  System.out.println(room2.getNameOfRoom()+"\n "+
                 "Площадь комнаты: "+room2.getSq()+" м^2 "+ "Занято "+room2.getUnfreeSq()+" м^2 "+"\n " +
                 "Освещенность: Окон - "+room2.getNumberOfWindows()+" по 700 лк. Лампочек - " +
-                room2.getLampList().size()+"\n  Мебель: "+room2.getFurnitureList().size()   );
+                room2.getLampList().size()+"\n  Мебель: "+room2.getFurnitureList().size());
+        for (Furniture furniture: room2.getFurnitureList()){
+            String  nameOfTable = furniture.getName();
+            System.out.print(nameOfTable);
+            double sq = furniture.getSq();
+            System.out.println(" площадью "+sq+" м^2");
+        }
 
 
 
