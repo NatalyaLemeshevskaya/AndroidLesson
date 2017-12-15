@@ -1,7 +1,7 @@
 package by.itacademy.Task2;
-//потом лучше сделать еще интерфейс или абст метод всей мебели и от нее всякая мебедь
+
 public abstract class Furniture {
-    //площадь
+
     private double sq;
     private String name;
 
