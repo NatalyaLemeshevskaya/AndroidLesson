@@ -6,6 +6,9 @@ import by.itacademy.Project.entity.Root;
 public class Main {
     public static void main(String[] args) {
 
+
+        //Разделение по функциональности по пакетам
+
 //        Parser parser = new JSONParser();
 //        Root root = parser.parse("goods.json");
 
