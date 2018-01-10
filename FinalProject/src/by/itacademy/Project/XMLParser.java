@@ -39,30 +39,28 @@ public class XMLParser implements Parser {
 
             String nameFile = rootElement.getElementsByTagName("name").item(0).getTextContent();
             String location = rootElement.getElementsByTagName("location").item(0).getTextContent();
-            List<String> emails = new ArrayList<>();
-//
-//            NodeList elementsNodeList = rootElement.getElementsByTagName("emails").item(0).getChildNodes();
-//            for(int i = 0;i<elementsNodeList.getLength();i++){
-//                Node node = elementsNodeList.item(i);
-//                if(node.getNodeType() != Node.ELEMENT_NODE){
-//                    continue;
-//                }
-//
-//                Element element = (Element) node;
-//                String email = element.getElementsByTagName("emails").item(0).getTextContent();
-//                emails.add(email);
-//
-//            }
 
 
             root.setName(nameFile);
             root.setLocation(location);
-            root.setEmails(emails);
 
 
-
-
-
+            NodeList emailList = rootElement.getElementsByTagName("emails");
+//            List<String> emails = new ArrayList<>();
+//            for(int i =0;i<emailList.getLength();i++) {
+//
+//                Node node = emailList.item(i);
+//                if (node.getNodeType() != Node.ELEMENT_NODE) {
+//                    continue;
+//                }
+//
+//                Element element = (Element) node;
+//                String email = element.getElementsByTagName("email").item(0).getTextContent();
+//                emails.add(email);
+//
+//          }
+//
+//          root.setEmails(emails);
 
         NodeList nodeList = rootElement.getElementsByTagName("goodsOfShop").item(0).getChildNodes();
 
