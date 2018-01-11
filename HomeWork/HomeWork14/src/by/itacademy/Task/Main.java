@@ -6,7 +6,6 @@ import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,10 +36,15 @@ public class Main {
 
             }
         }
+
+
         outputInfo(mp3FileList);
-       findTheSame(mp3FileList);
+       findTheSameByCheckSum(mp3FileList);
+       findTheSameByName(mp3FileList);
+
 
     }
+
 
     public static void outputInfo(List<Mp3File> mp3Files){
 
@@ -107,7 +111,7 @@ public class Main {
      return checkSumString;
     }
 
-    public static void findTheSame(List<Mp3File> mp3Files) throws IOException, NoSuchAlgorithmException {
+    public static void findTheSameByCheckSum(List<Mp3File> mp3Files) throws IOException, NoSuchAlgorithmException {
 
         String checkSum1 = "";
         String checkSum2 = "";
@@ -123,8 +127,26 @@ public class Main {
                     System.out.println((mp3Files.get(i).getFilename()));
                     System.out.println((mp3Files.get(j).getFilename()));
 
+
                 }
             }
         }
+    }
+
+    public static void findTheSameByName(List<Mp3File> mp3Files){
+
+        for (int i = 0; i < mp3Files.size(); i++) {
+            for(int j = i+1; j<mp3Files.size();j++){
+            if ((mp3Files.get(i).getId3v2Tag().getArtist().equals(mp3Files.get(j).getId3v2Tag().getArtist())) &&
+                    (mp3Files.get(i).getId3v2Tag().getAlbum().equals(mp3Files.get(j).getId3v2Tag().getAlbum()))&&
+                    (mp3Files.get(i).getId3v2Tag().getTitle().equals(mp3Files.get(j).getId3v2Tag().getTitle()))) {
+
+                System.out.println("Дубликаты : " + mp3Files.get(i).getId3v2Tag().getArtist() + " " + mp3Files.get(i).getId3v2Tag().getAlbum() + " " + mp3Files.get(i).getId3v2Tag().getTitle());
+                System.out.println((mp3Files.get(i).getFilename()));
+                System.out.println((mp3Files.get(j).getFilename()));
+
+                }
+            }
         }
+    }
 }
