@@ -1,6 +1,6 @@
-package by.itacademy.Project;
+package by.itacademy.Task.DownLoad;
 
-import by.itacademy.Project.entity.Root;
+import by.itacademy.Task.entity.Root;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,6 +30,7 @@ public class DownLoader {
             if(responceCode == HttpURLConnection.HTTP_OK){
 
                 inputStream = httpURLConnection.getInputStream();
+
 
                 if(link.endsWith(".xml")){
                     fileName = "goods.xml";

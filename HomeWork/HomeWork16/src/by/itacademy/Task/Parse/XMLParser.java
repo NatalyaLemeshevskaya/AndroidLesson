@@ -1,7 +1,7 @@
-package by.itacademy.Project;
+package by.itacademy.Task.Parse;
 
-import by.itacademy.Project.entity.Goods;
-import by.itacademy.Project.entity.Root;
+import by.itacademy.Task.entity.Goods;
+import by.itacademy.Task.entity.Root;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class XMLParser implements Parser {
-
 
 
     @Override
@@ -43,6 +42,8 @@ public class XMLParser implements Parser {
             root.setName(nameFile);
             root.setLocation(location);
 
+
+
             NodeList emailsNodeList = rootElement.getElementsByTagName("emails");
             List<String> emails = new ArrayList<>();
             for(int j=0; j< emailsNodeList.getLength(); j++){
@@ -56,6 +57,8 @@ public class XMLParser implements Parser {
             }
 
             root.setEmails(emails);
+
+
 
         NodeList nodeList = rootElement.getElementsByTagName("goodsOfShop").item(0).getChildNodes();
 

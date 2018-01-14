@@ -1,8 +1,7 @@
-package by.itacademy.Project;
+package by.itacademy.Task.Parse;
 
-import by.itacademy.Project.entity.DateJsonConverter;
-import by.itacademy.Project.entity.Goods;
-import by.itacademy.Project.entity.Root;
+import by.itacademy.Task.entity.DateJsonConverter;
+import by.itacademy.Task.entity.Root;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -12,10 +11,13 @@ import java.util.Date;
 
 public class JSONParser implements Parser {
 
+//    private static final String Link = "http://kiparo.ru/t/shop.json";
+//    DownLoader downLoader = new DownLoader();
 
     @Override
     public Root parse(String file) {
 
+       // downLoader.Loader(Link,file);
         try{
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             GsonBuilder builder = new GsonBuilder()
