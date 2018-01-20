@@ -1,7 +1,7 @@
-package by.itacademy.Project;
+package by.itacademy.Project.data;
 
-import by.itacademy.Project.entity.Goods;
-import by.itacademy.Project.entity.Root;
+import by.itacademy.Project.data.entity.Goods;
+import by.itacademy.Project.data.entity.Root;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,19 +18,18 @@ import java.util.Locale;
 public class XMLParser implements Parser {
 
 
-
     @Override
     public Root parse(String file) {
 
         Document dom;
-
+        Root root = new Root();
         try {
             //открываем xml файл
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newDefaultInstance();
             DocumentBuilder builder = dbf.newDocumentBuilder();
             dom = builder.parse(file);
 
-            Root root = new Root();
+
 
             //===парсинг xml===
             //получаем главный, самый первый элемент из файла
@@ -59,7 +58,7 @@ public class XMLParser implements Parser {
 
         NodeList nodeList = rootElement.getElementsByTagName("goodsOfShop").item(0).getChildNodes();
 
-        List<Goods> goods= new ArrayList<>();
+            ArrayList<Goods> goods= new ArrayList<>();
 
         for(int i =0;i<nodeList.getLength();i++){
 
@@ -106,7 +105,6 @@ public class XMLParser implements Parser {
             System.out.println("Невозможно открыть xml  "+e.toString());
 
         }
-
-        return null;
+       return root;
     }
 }

@@ -1,5 +1,6 @@
-package by.itacademy.Project.entity;
+package by.itacademy.Project.data.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,7 +9,7 @@ public class Root {
     private String name;
     private String location;
     private List<String> emails;
-    private List<Goods> goods;
+    private ArrayList<Goods> goods;
 
     public Root() {
     }
@@ -37,11 +38,11 @@ public class Root {
         this.emails = emails;
     }
 
-    public List<Goods> getGoods() {
+    public ArrayList<Goods> getGoods() {
         return goods;
     }
 
-    public void setGoods(List<Goods> goods) {
+    public void setGoods(ArrayList<Goods> goods) {
         this.goods = goods;
     }
 

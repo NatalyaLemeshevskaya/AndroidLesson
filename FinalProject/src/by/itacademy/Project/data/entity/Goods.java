@@ -1,4 +1,4 @@
-package by.itacademy.Project.entity;
+package by.itacademy.Project.data.entity;
 
 import java.util.Date;
 import java.util.Objects;
@@ -9,7 +9,7 @@ public class Goods {
     private String name;
     private String description;
     private Date year;
-    private double price;
+    private int price;
     private boolean visible;
 
     public Goods() {
@@ -47,11 +47,11 @@ public class Goods {
         this.year = year;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -80,6 +80,13 @@ public class Goods {
     public int hashCode() {
 
         return Objects.hash(id, name, description, year, price, visible);
+    }
+
+
+    public void printGoods(){
+        System.out.println ("Товар : "+name+" под номером "+id+". Дата создания: "+year
+                +" Имеет цену "+price+".Описание товара :  "+description);
+
     }
 }
 
