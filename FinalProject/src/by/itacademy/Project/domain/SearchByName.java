@@ -18,6 +18,7 @@ public class SearchByName extends Search {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введи информацию о каком продукте вы хотели бы получить ");
         String name = scanner.nextLine();
+
         Pattern pattern = Pattern.compile("[a-zA-Z, ]+");
         Matcher matcher = pattern.matcher(name);
 
@@ -26,10 +27,10 @@ public class SearchByName extends Search {
             for (Goods goods : goodsArrayList) {
                 if (goods.getName().contains(name)) {
                     goods.printGoods();
-
+                    return;
                 }
-
             }
+            System.out.println("Товара с таким именем не найденно ");
 
 
         } else {

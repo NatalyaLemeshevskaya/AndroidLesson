@@ -64,4 +64,8 @@ public class Root {
 
         return Objects.hash(name, location, emails, goods);
     }
+    public void print(){
+        System.out.println("Название магазина: "+name+" находится в городе "+location+". По всем вопросам вы можете обращаться по emails:\n"+emails.toString());
+    }
+
 }

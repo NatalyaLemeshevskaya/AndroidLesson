@@ -16,11 +16,20 @@ public class SearchByPrice extends Search {
         System.out.println("Введите max цену ");
         int max = scanner.nextByte();
 
+        boolean find = false;
+
         for(Goods goods : goodsArrayList){
             if(goods.getPrice()>= min && goods.getPrice()<=max){
                 goods.printGoods();
+                find = true;
             }
+
+        }if(!find) {
+            System.out.println("Не найдено ни одного товара в данном ценновом промежутке ");
+        }else{
+            find = !find;
         }
+
 
     }
 }

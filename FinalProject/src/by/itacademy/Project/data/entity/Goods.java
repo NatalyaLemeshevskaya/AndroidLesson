@@ -84,8 +84,8 @@ public class Goods {
 
 
     public void printGoods(){
-        System.out.println ("Товар : "+name+" под номером "+id+". Дата создания: "+year
-                +" Имеет цену "+price+".Описание товара :  "+description);
+        System.out.println ("Товар "+(id+1)+" : "+name+". Дата создания: "+year
+                +" Стоимостью "+price+" р. "+" Описание товара :  "+description);
 
     }
 }

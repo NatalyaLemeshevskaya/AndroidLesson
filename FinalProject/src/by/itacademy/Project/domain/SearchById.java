@@ -11,18 +11,16 @@ public class SearchById extends Search {
     public void search(ArrayList<Goods> goodsArrayList) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("id ");
+        System.out.println("Введите номер товара:  ");
         int id = scanner.nextByte();
         for(Goods goods : goodsArrayList){
-            if(goods.getId() == id){
+            if((goods.getId()+1) == id){
                 goods.printGoods();
-            }else {
-                System.out.println("no");
+                return;
             }
 
         }
-
-
+        System.out.println("Товара с таким номером не найденно ");
 
     }
 }
