@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Manager {
    /**
-    *  Реализация Singlton
+    *  Реализация Singleton
     */
     private static Manager instance = new Manager();
 
@@ -60,7 +60,7 @@ public class Manager {
         }
 
         System.out.println("Отлично, похоже можно работать с товарами ");
-        System.out.println("----------------------------");
+        System.out.println("-----------------------------------------");
         System.out.println("Вот что вы можете сделать с товарами:");
         while (true) {
             System.out.println("Введите :\n1 - если хотите получить информацию о магазине\n" +
@@ -80,7 +80,9 @@ public class Manager {
                     }
                     break;
                 case 3:
-                    System.out.println("Введи 1, если хотите найти товар по имени, 2 - по номеру товара, 3 - по диапозону цен ");
+                    System.out.println("Введите :\n1 - если хотите найти товар по имени\n" +
+                            "2 - по номеру товара\n" +
+                            "3 - по диапозону цен");
                     int option = scanner.nextByte();
                     switch (option) {
                         case 1:
@@ -102,7 +104,8 @@ public class Manager {
                     break;
 
                 case 4:
-                    System.out.println("Введи 1, если хотите отсортировать товары по имени, 2 - если по цене ");
+                    System.out.println("Введи :\n1 - если хотите отсортировать товары по имени\n" +
+                            "2 - если по цене ");
                     int version = scanner.nextByte();
                     switch (version) {
                         case 1:
@@ -120,8 +123,8 @@ public class Manager {
                     }
                     break;
                 case 0:
-                    break;
-                
+                    return;
+
             }
 
         }

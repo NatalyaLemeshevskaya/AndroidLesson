@@ -82,8 +82,9 @@ public class XMLParser implements Parser {
             String visibleString = element.getElementsByTagName("visible").item(0).getTextContent();
             boolean visible = Boolean.valueOf(visibleString);
 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault());
             String yearStr = element.getElementsByTagName("year").item(0).getTextContent();
-            Date year = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(yearStr);
+            Date year = sdf.parse(yearStr);
 
 
             Goods good = new Goods();

@@ -65,7 +65,7 @@ public class Goods {
 
     @Override
     public String toString() {
-        return "Goods{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\'' + ", year=" + year + ", price=" + price + ", visible=" + visible + '}';
+        return "Goods{" + "id=" + (id+1) + ", name='" + name + '\'' + ", description='" + description + '\'' + ", year=" + year + ", price=" + price + ", visible=" + visible + '}';
     }
 
     @Override

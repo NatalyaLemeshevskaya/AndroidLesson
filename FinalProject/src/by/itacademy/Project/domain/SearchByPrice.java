@@ -25,7 +25,7 @@ public class SearchByPrice extends Search {
             }
 
         }if(!find) {
-            System.out.println("Не найдено ни одного товара в данном ценновом промежутке ");
+            System.out.println("Не найдено ни одного товара в данном ценновом диапазоне ");
         }else{
             find = !find;
         }

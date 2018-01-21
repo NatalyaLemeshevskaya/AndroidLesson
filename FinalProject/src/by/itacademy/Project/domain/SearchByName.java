@@ -16,22 +16,29 @@ public class SearchByName extends Search {
     public void search(ArrayList<Goods> goodsArrayList) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введи информацию о каком продукте вы хотели бы получить ");
+        System.out.println("Введите имя продукта или часть имени: ");
         String name = scanner.nextLine();
 
         Pattern pattern = Pattern.compile("[a-zA-Z, ]+");
         Matcher matcher = pattern.matcher(name);
 
         if (matcher.matches()) {
+            /**
+             * Товары могут начинаться с одной буквы, чтобы вывести их все,
+             * а при неудачном поиске вывести ошибку - вводим счетчик
+             */
+            int count = 0;
 
             for (Goods goods : goodsArrayList) {
-                if (goods.getName().contains(name)) {
+                if (goods.getName().toLowerCase().contains(name)) {
                     goods.printGoods();
-                    return;
+                    count++;
                 }
-            }
-            System.out.println("Товара с таким именем не найденно ");
 
+            }
+            if(count == 0) {
+                System.out.println("Товара с таким именем не найденно ");
+            }
 
         } else {
 
