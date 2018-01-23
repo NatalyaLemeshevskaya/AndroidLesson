@@ -5,6 +5,11 @@ import by.itacademy.Project.data.entity.Root;
 
 import java.util.Comparator;
 
+/**
+ * Класс для сортировки по цене, удобно изпользовать в такой ситуации
+ * интерфейс Comparator. Достаточно правильно переопределить метод
+ */
+
 public class SortByPrice implements Comparator<Goods> {
     @Override
     public int compare(Goods o1, Goods o2) {

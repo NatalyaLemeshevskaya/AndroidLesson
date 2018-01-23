@@ -5,6 +5,10 @@ import by.itacademy.Project.data.entity.Root;
 
 import java.util.Comparator;
 
+/**
+ * Класс для сортировки по имени
+ * Переопределяем метод интерфейса Comparator для правильной сортировки
+ */
 public class SortByName implements Comparator<Goods> {
     @Override
     public int compare(Goods o1, Goods o2) {

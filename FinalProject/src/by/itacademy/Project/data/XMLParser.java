@@ -15,6 +15,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Класс осуществляет парсер XML файла
+ * Переопределяет метод интерфейса Parser
+ */
 public class XMLParser implements Parser {
 
 

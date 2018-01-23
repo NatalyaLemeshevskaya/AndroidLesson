@@ -11,7 +11,8 @@ import java.net.URL;
 
 public class DownLoader {
 
-       public Root loader(String link){
+       public boolean loader(String link){
+           boolean isOk = false;
 
         InputStream inputStream = null;
         FileOutputStream fileOutputStream = null;
@@ -20,17 +21,26 @@ public class DownLoader {
         try{
             URL url = new URL(link);
 
-//Чтобы получить объект класса HttpURLConnection, следует вызвать метод openConnection()
-// для объекта типа URL, но результат нужно привести к типу HttpURLConnection.
-            HttpURLConnection httpURLConnection =
+            /**
+             * Чтобы получить объект класса HttpURLConnection, следует вызвать метод openConnection()
+             * для объекта типа URL, но результат нужно привести к типу HttpURLConnection.
+             */
+             HttpURLConnection httpURLConnection =
                     (HttpURLConnection) url.openConnection();
 
-//Необходимо убедиться, что соединение по протоколу HTTP действительно установлено.
-            int responceCode = httpURLConnection.getResponseCode();
-            if(responceCode == HttpURLConnection.HTTP_OK){
+
+            // Необходимо убедиться что соединение действительно установлено
+
+            int responseCode = httpURLConnection.getResponseCode();
+            //Если установлено
+            if(responseCode == HttpURLConnection.HTTP_OK){
 
                 inputStream = httpURLConnection.getInputStream();
 
+                /**
+                 * Проверяем на что заканчивается ссылка и тем самым узнаем
+                 * куда записывать информацию из файла
+                 */
                 if(link.endsWith(".xml")){
                     fileName = "goods.xml";
                 }else if(link.endsWith(".json")){
@@ -47,10 +57,12 @@ public class DownLoader {
                     fileOutputStream.write(buffer, 0, byteRead);
                 }
 
-
+                if(file.canRead()){
+                    isOk = true;
+                }
 
             }else{
-                System.out.println("Данные не найдены, responce code = "+ responceCode);
+                System.out.println("Данные не найдены, responce code = "+ responseCode);
             }
 
 
@@ -58,6 +70,7 @@ public class DownLoader {
             System.out.println("Невозможно скачать файл, error"+e.toString());
 
         }finally {
+            //Проверяем были бы открыты потоки, если да - закрываем
             if(inputStream !=null){
                 try{inputStream.close();
                 }catch (IOException e){
@@ -76,7 +89,7 @@ public class DownLoader {
         }
 
 
-return null;
+      return isOk;
 
     }
 

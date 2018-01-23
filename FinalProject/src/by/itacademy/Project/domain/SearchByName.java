@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * В этом классе осуществляется поиск по имени товара
+ * Класс наследуется от класса Search, переопределяя соответствующий метод
+ */
 public class SearchByName extends Search {
 
 
@@ -18,7 +21,7 @@ public class SearchByName extends Search {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите имя продукта или часть имени: ");
         String name = scanner.nextLine();
-
+        //Изпользуя регулярные выражения,проверяем на ввод слов, состоящий из букв латинского алфавита
         Pattern pattern = Pattern.compile("[a-zA-Z, ]+");
         Matcher matcher = pattern.matcher(name);
 

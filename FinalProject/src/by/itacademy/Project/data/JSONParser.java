@@ -7,7 +7,10 @@ import com.google.gson.GsonBuilder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Date;
-
+/**
+ * Класс осуществляет парсер JSON файла
+ * Переопределяет метод интерфейса Parser
+ */
 public class JSONParser implements Parser {
 
 

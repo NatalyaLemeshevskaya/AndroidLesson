@@ -11,8 +11,12 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.TimeZone;
 
+/**
+ * Чтобы разспарсить дату из JSON файла соездаем отдельный класс
+ */
 public class DateJsonConverter implements JsonDeserializer<Date> {
     private final String[] formats = new String[]{
+            //Возможные записи дат в файле(на случай, если мы не знаем в каком именно формате записана дата)
             "yyyy-MM-dd HH:mm",
             "yyyy-MM-dd"
 
