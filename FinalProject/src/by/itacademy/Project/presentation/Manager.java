@@ -90,7 +90,8 @@ public class Manager {
                 case 3:
                     System.out.println("Введите :\n1 - если хотите найти товар по имени\n" +
                             "2 - по номеру товара\n" +
-                            "3 - по диапозону цен");
+                            "3 - по диапозону цен\n" +
+                            "4 - по дате изготовления");
                     check(scanner);
                     number = scanner.nextInt();
                     switch (number) {
@@ -107,8 +108,12 @@ public class Manager {
                             Search searchPrice = new SearchByPrice();
                             searchPrice.search(root.getGoods());
                             break;
+                        case 4:
+                            Search searchDate = new SearchByDate();
+                            searchDate.search(root.getGoods());
+                            break;
                         default: {
-                            System.out.println("Вы явно промазали ");
+                                System.out.println("Вы явно промазали ");
                         }
                     }
                     break;
