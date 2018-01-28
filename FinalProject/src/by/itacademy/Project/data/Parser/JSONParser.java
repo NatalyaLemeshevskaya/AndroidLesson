@@ -1,6 +1,6 @@
-package by.itacademy.Project.data;
+package by.itacademy.Project.data.Parser;
 
-import by.itacademy.Project.data.entity.Root;
+import by.itacademy.Project.domain.entity.Root;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -1,7 +1,5 @@
 package by.itacademy.Project.data;
 
-import by.itacademy.Project.data.entity.Root;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

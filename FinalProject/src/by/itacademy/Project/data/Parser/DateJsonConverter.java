@@ -1,4 +1,4 @@
-package by.itacademy.Project.data;
+package by.itacademy.Project.data.Parser;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

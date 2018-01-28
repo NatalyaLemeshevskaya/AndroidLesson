@@ -1,4 +1,4 @@
-package by.itacademy.Project;
+package by.itacademy.Project.domain;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

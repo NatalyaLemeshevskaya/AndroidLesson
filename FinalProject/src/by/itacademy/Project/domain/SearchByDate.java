@@ -1,7 +1,6 @@
 package by.itacademy.Project.domain;
 
-import by.itacademy.Project.Adapter;
-import by.itacademy.Project.data.entity.Goods;
+import by.itacademy.Project.domain.entity.Goods;
 
 import java.io.IOException;
 import java.text.ParseException;

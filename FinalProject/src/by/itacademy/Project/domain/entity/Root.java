@@ -1,4 +1,4 @@
-package by.itacademy.Project.data.entity;
+package by.itacademy.Project.domain.entity;
 
 import java.util.ArrayList;
 import java.util.List;

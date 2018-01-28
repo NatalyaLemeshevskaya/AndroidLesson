@@ -1,7 +1,7 @@
-package by.itacademy.Project.data;
+package by.itacademy.Project.data.Parser;
 
-import by.itacademy.Project.data.entity.Goods;
-import by.itacademy.Project.data.entity.Root;
+import by.itacademy.Project.domain.entity.Goods;
+import by.itacademy.Project.domain.entity.Root;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -112,4 +112,8 @@ public class XMLParser implements Parser {
         }
        return root;
     }
+
+
+
+
 }

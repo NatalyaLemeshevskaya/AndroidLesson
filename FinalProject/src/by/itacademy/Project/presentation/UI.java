@@ -1,8 +1,11 @@
 package by.itacademy.Project.presentation;
 
 import by.itacademy.Project.data.*;
-import by.itacademy.Project.data.entity.Goods;
-import by.itacademy.Project.data.entity.Root;
+import by.itacademy.Project.data.Parser.JSONParser;
+import by.itacademy.Project.data.Parser.Parser;
+import by.itacademy.Project.data.Parser.XMLParser;
+import by.itacademy.Project.domain.entity.Goods;
+import by.itacademy.Project.domain.entity.Root;
 import by.itacademy.Project.domain.*;
 
 import java.io.IOException;
@@ -11,17 +14,17 @@ import java.util.Scanner;
 /**
  * Управляющий класс
  */
-public class Manager {
+public class UI {
    /**
     *  Реализация Singleton
     */
-    private static Manager instance = new Manager();
+    private static UI instance = new UI();
 
-    public static Manager getInstance() {
+    public static UI getInstance() {
         return instance;
     }
 
-    private Manager() {
+    private UI() {
     }
 
     //Константы парсеров
@@ -69,6 +72,7 @@ public class Manager {
 
         //Чтобы пользователь мог неоднократно изпользовать предоставляемые ему функции,
         // удобно изпользовать бесконечный цикл While
+
         while (true) {
             System.out.println("Введите :\n1 - если хотите получить информацию о магазине\n" +
                     "2 - если хотите вывести все товары и информацию о них \n" +

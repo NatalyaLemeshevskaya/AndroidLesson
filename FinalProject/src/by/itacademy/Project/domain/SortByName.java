@@ -1,7 +1,7 @@
 package by.itacademy.Project.domain;
 
-import by.itacademy.Project.data.entity.Goods;
-import by.itacademy.Project.data.entity.Root;
+import by.itacademy.Project.domain.entity.Goods;
+import by.itacademy.Project.domain.entity.Root;
 
 import java.util.Comparator;
 
