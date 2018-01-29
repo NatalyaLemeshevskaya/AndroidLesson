@@ -44,14 +44,23 @@ public class UI {
 
 
         //Скачиваем файлы, реализуя многопоточность
-
         DownLoaderMultithreading downLoaderMultithreading = new DownLoaderMultithreading();
         downLoaderMultithreading.download();
+
+
+        //Проверяем на ошибку, если вдруг что-то пошло не так, показываем сообщение и выходим из программы
+        if(downLoaderMultithreading.isOk()){
+            System.out.println("Файлы успешно загружены");
+        }else {
+            System.out.println("Не удалось скачать файлы, можно попробовать позже");
+            return;
+        }
 
         System.out.println("Делее распарсим данные ");
         System.out.println("Введите 1 - если хотите скачать и распарсить XML, 2 - если JSON:");
         check(scanner);
         number = scanner.nextInt();
+
         switch (number) {
             case 1:
                 Parser parserXml = new XMLParser();
@@ -62,9 +71,10 @@ public class UI {
                 root = parserJson.parse(fileJson);
                 break;
             default:
-                System.out.println("Вы явно промазали ");
+                System.out.println("Вы явно промазали.Нужно быть внимательнее ");
                 return;
-             }
+
+        }
 
         System.out.println("Отлично, похоже можно работать с товарами ");
         System.out.println("-----------------------------------------");

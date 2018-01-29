@@ -9,6 +9,11 @@ public class DownLoaderMultithreading {
     //Переменная должна быть volatile для использования в разных потоках
     private   volatile boolean isOk;
 
+    public boolean isOk() {
+        return isOk;
+    }
+
+
     //Реализуем многопоточность
     public void download(){
 
@@ -40,11 +45,11 @@ public class DownLoaderMultithreading {
             e.printStackTrace();
         }
 
-        if(isOk){
-            System.out.println("Файлы успешно загружены");
-        }else {
-            System.out.println("Не удалось скачать файлы, можно попробовать позже");
-        }
+//        if(isOk){
+//            System.out.println("Файлы успешно загружены");
+//        }else {
+//            System.out.println("Не удалось скачать файлы, можно попробовать позже");
+//        }
 
 
 
