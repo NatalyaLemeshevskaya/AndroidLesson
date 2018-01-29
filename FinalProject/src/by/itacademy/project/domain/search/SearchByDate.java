@@ -1,6 +1,7 @@
-package by.itacademy.Project.domain;
+package by.itacademy.project.domain.search;
 
-import by.itacademy.Project.domain.entity.Goods;
+import by.itacademy.project.domain.adapter.Adapter;
+import by.itacademy.project.domain.entity.Goods;
 
 import java.io.IOException;
 import java.text.ParseException;

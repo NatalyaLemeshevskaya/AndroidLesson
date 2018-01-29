@@ -1,7 +1,7 @@
-package by.itacademy.Project.data.Parser;
+package by.itacademy.project.data.parser;
 
-import by.itacademy.Project.domain.entity.Goods;
-import by.itacademy.Project.domain.entity.Root;
+import by.itacademy.project.domain.entity.Goods;
+import by.itacademy.project.domain.entity.Root;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,7 +17,7 @@ import java.util.Locale;
 
 /**
  * Класс осуществляет парсер XML файла
- * Переопределяет метод интерфейса Parser
+ * Переопределяет метод интерфейса parser
  */
 public class XMLParser implements Parser {
 

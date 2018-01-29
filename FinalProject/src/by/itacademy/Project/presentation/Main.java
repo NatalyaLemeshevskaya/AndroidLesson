@@ -1,4 +1,4 @@
-package by.itacademy.Project.presentation;
+package by.itacademy.project.presentation;
 
 
 import java.io.IOException;

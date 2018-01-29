@@ -1,6 +1,6 @@
-package by.itacademy.Project.data.Parser;
+package by.itacademy.project.data.parser;
 
-import by.itacademy.Project.domain.entity.Root;
+import by.itacademy.project.domain.entity.Root;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.util.Date;
 /**
  * Класс осуществляет парсер JSON файла
- * Переопределяет метод интерфейса Parser
+ * Переопределяет метод интерфейса parser
  */
 public class JSONParser implements Parser {
 

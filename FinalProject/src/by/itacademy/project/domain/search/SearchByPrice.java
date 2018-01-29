@@ -1,13 +1,13 @@
-package by.itacademy.Project.domain;
+package by.itacademy.project.domain.search;
 
-import by.itacademy.Project.domain.entity.Goods;
+import by.itacademy.project.domain.entity.Goods;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
  * В этом классе осуществляется поиск по товарам, которые входят в определенный ценовой диапазон
- * Класс наследуется от класса Search, переопределяя соответствующий метод
+ * Класс наследуется от класса search, переопределяя соответствующий метод
  */
 public class SearchByPrice extends Search {
     @Override

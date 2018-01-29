@@ -1,12 +1,14 @@
-package by.itacademy.Project.presentation;
+package by.itacademy.project.presentation;
 
-import by.itacademy.Project.data.*;
-import by.itacademy.Project.data.Parser.JSONParser;
-import by.itacademy.Project.data.Parser.Parser;
-import by.itacademy.Project.data.Parser.XMLParser;
-import by.itacademy.Project.domain.entity.Goods;
-import by.itacademy.Project.domain.entity.Root;
-import by.itacademy.Project.domain.*;
+import by.itacademy.project.data.downLoader.DownLoader;
+import by.itacademy.project.data.parser.JSONParser;
+import by.itacademy.project.data.parser.Parser;
+import by.itacademy.project.data.parser.XMLParser;
+import by.itacademy.project.domain.search.*;
+import by.itacademy.project.domain.sort.SortByName;
+import by.itacademy.project.domain.sort.SortByPrice;
+import by.itacademy.project.domain.entity.Goods;
+import by.itacademy.project.domain.entity.Root;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -44,7 +46,7 @@ public class UI {
 
 
         //Скачиваем файлы, реализуя многопоточность
-        DownLoaderMultithreading downLoaderMultithreading = new DownLoaderMultithreading();
+        DownLoader.DownLoaderMultithreading downLoaderMultithreading = new DownLoader().new DownLoaderMultithreading();
         downLoaderMultithreading.download();
 
 

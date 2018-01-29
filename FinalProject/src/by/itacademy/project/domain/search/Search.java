@@ -1,6 +1,6 @@
-package by.itacademy.Project.domain;
+package by.itacademy.project.domain.search;
 
-import by.itacademy.Project.domain.entity.Goods;
+import by.itacademy.project.domain.entity.Goods;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package by.itacademy.Project.domain.entity;
+package by.itacademy.project.domain.entity;
 
 import java.util.Date;
 import java.util.Objects;
