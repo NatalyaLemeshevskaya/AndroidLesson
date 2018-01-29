@@ -1,6 +1,6 @@
 *.txt
 *.idea
-*.iml
-*.json
-*.xml
+.iml
+.json
+.xml
 out/
