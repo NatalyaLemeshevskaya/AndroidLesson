@@ -9,11 +9,11 @@ public class Main {
     int money = 470;
 
         atm.kolMoney(money);
-        atm.kolMoney1(money);
+        atm.amountOfMoneyInDenom(money);
 
-        atm.hundred = atm.hundred1;
-        atm.fifties = atm.fifties1;
-        atm.twenty= atm.twenty1;
+        atm.hundred = atm.countHundred;
+        atm.fifties = atm.countFifties;
+        atm.twenty = atm.countTwenty;
 
         int money2 = atm.vvod() + money;
         atm.kolMoney(money2);

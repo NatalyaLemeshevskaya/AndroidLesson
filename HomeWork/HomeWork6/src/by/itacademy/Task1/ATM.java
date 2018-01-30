@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class ATM extends Action implements ATMMoney,ATMVivod,ATMVvod,Bank {
     Scanner in = new Scanner(System.in);
 
-    public int hundred1;
-    public int fifties1;
-    public int twenty1;
+    public int countHundred;
+    public int countFifties;
+    public int countTwenty;
     public int hundred ;
     public int fifties;
     public int twenty ;
@@ -15,11 +15,11 @@ public class ATM extends Action implements ATMMoney,ATMVivod,ATMVvod,Bank {
 
 
     @Override
-    public int kolMoney1(int money) {
-        hundred1 = money/100;
-        fifties1 = (money%100)/50;
-        twenty1 = ((money%100)%50)/20;
-        System.out.println("Сотен - "+hundred1+" Пятидесяток - "+fifties1+" Двадцаток - "+twenty1);
+    public int amountOfMoneyInDenom(int money) {
+        countHundred = money/100;
+        countFifties = (money%100)/50;
+        countTwenty = ((money%100)%50)/20;
+        System.out.println("Сотен - "+ countHundred +" Пятидесяток - "+ countFifties +" Двадцаток - "+ countTwenty);
         return money;
     }
 
@@ -27,10 +27,10 @@ public class ATM extends Action implements ATMMoney,ATMVivod,ATMVvod,Bank {
     public int vivod() {
         System.out.println("Введите сумму снятия денег с банкомата = ");
         int mon = in.nextInt();
-        kolMoney1(mon);
-        hundred = hundred - hundred1;
-        fifties = fifties - fifties1;
-        twenty = twenty- twenty1;
+        amountOfMoneyInDenom(mon);
+        hundred = hundred - countHundred;
+        fifties = fifties - countFifties;
+        twenty = twenty - countTwenty;
         System.out.println("В банкомате: Соток - "+hundred+" Пятидесяток - "+fifties+" Двадцаток - "+twenty);
         return mon;
 
@@ -49,10 +49,10 @@ public class ATM extends Action implements ATMMoney,ATMVivod,ATMVvod,Bank {
     public int vvod() {
         System.out.println("Введите сумму добавления денег в банкомат = ");
         int mon = in.nextInt();
-        kolMoney1(mon);
-        hundred = hundred + hundred1;
-        fifties = fifties + fifties1;
-        twenty = twenty + twenty1;
+        amountOfMoneyInDenom(mon);
+        hundred = hundred + countHundred;
+        fifties = fifties + countFifties;
+        twenty = twenty + countTwenty;
         System.out.println("В банкомате: Соток - "+hundred+" Пятидесяток - "+fifties+" Двадцаток - "+twenty);
         return mon;
     }

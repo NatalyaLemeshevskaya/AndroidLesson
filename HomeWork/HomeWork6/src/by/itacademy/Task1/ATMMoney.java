@@ -2,11 +2,11 @@ package by.itacademy.Task1;
 
 public interface ATMMoney {
 
-//    int hundred1 = 0;
-//    int fifties1 = 0;
-//    int twenty1 = 0;
+//    int hundredNew = 0;
+//    int countFifties = 0;
+//    int countTwenty = 0;
   void kolMoney(int money);
-  int kolMoney1(int money);
+  int amountOfMoneyInDenom(int money);
 
 
 }
