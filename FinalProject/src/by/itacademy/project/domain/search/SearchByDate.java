@@ -22,7 +22,7 @@ public class SearchByDate extends Search {
 
         Adapter adapter = new Adapter();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите дату в формате xxxx-xx-xx : ");
+        System.out.println("Введите дату в формате gggg-mm-dd : ");
         String dateStr = scanner.nextLine();
         Date date = null;
         try {
@@ -35,9 +35,16 @@ public class SearchByDate extends Search {
 
            if(goods.getYear().equals(date)){
                goods.printGoods();
+               return;
+
            }
 
+
         }
+        System.out.println("Товара с такой датой не найденно, попробуйте еще ");
+        search(goodsArrayList);
+
+
 
 
     }
